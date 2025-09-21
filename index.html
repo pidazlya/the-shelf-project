@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookshelf App</title>
+  <link rel="icon" href="assets/images/book-logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="brand-name">
+      <a href="index.html"><img src="assets/shelf-logo.png" alt="Bookshelf Logo" /></a>
+    </div>
+    <nav id="nav">
+      <ul>
+        <li><a href="#notYetRead">Bookshelf</a></li>
+        <li><a href="#searchBooks">Search</a></li>
+        <li><a href="#addBook">Add Book</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="content">
+    <article>
+      <h2>Organize Your Reading Journey</h2>
+      <p>
+        Bookshelf App helps you add, track, and complete your books easily.  
+        Manage your reading list, search quickly, and keep progress safe in your browser.  
+        Simple, elegant, and designed for book lovers.
+      </p>
+    </article>
+    <aside>
+      <img src="assets/hero-book.jpg" alt="Bookshelf Preview" />
+    </aside>
+  </section>
+
+  <!-- Add Book Form -->
+  <main class="bookshelf-page">
+    <section aria-labelledby="addBook" class="add-book-section">
+      <div class="add-book-container">
+        <!-- Foto di kiri -->
+        <aside class="add-book-image">
+          <img src="assets/add-book-illustration.jpg" alt="Add Book Illustration" />
+        </aside>
+
+        <!-- Form di kanan -->
+        <form id="bookForm" data-testid="bookForm">
+          <h2 id="addBook">Add New Book</h2>
+          <input type="hidden" id="bookId">
+
+          <div>
+            <label for="bookFormTitle">Book Title</label>
+            <input id="bookFormTitle" type="text" placeholder="Enter book title" required data-testid="bookFormTitleInput" />
+          </div>
+
+          <div>
+            <label for="bookFormAuthor">Author</label>
+            <input id="bookFormAuthor" type="text" placeholder="Enter author name" required data-testid="bookFormAuthorInput" />
+          </div>
+
+          <div>
+            <label for="bookFormYear">Year</label>
+            <input id="bookFormYear" type="number" placeholder="e.g. 2023" required data-testid="bookFormYearInput" />
+          </div>
+
+          <div>
+            <label for="bookFormCategory">Category</label>
+            <input id="bookFormCategory" type="text" placeholder="e.g. Novel, Education" required data-testid="bookFormCategoryInput" />
+          </div>
+
+        <div>
+  <label for="bookFormImage">Book Cover (URL)</label>
+  <input id="bookFormImage" type="url" placeholder="https://example.com/cover.jpg" />
+  <img id="imagePreview" class="preview" alt="Book cover preview" style="display:none;" />
+</div>
+
+
+          <div>
+            <label for="bookFormIsComplete">Already Finished Reading</label>
+            <input id="bookFormIsComplete" type="checkbox" data-testid="bookFormIsCompleteCheckbox" />
+          </div>
+
+          <button id="bookFormSubmit" type="submit" data-testid="bookFormSubmitButton">Add Book</button>
+        </form>
+      </div>
+    </section>
+
+   
+    <h1>Bookshelf</h1>
+        <!-- Search Section -->
+    <section class="search-section" aria-labelledby="searchBooks">
+      <h2 id="searchBooks">Search Books</h2>
+      <form id="searchBook" data-testid="searchBookForm">
+        <input id="searchBookTitle" type="text" placeholder="Search by title" data-testid="searchBookFormTitleInput" />
+        <button id="searchSubmit" type="submit" data-testid="searchBookFormSubmitButton">Search</button>
+      </form>
+      <div id="searchResults" class="book-list" data-testid="searchResults"></div>
+    </section>
+  
+   <!-- Not Yet Read Section -->
+    
+    <section aria-labelledby="notYetRead">
+      <h2 id="notYetRead">Not Yet Read</h2>
+      <div id="incompleteBookList" data-testid="incompleteBookList">
+        <article data-bookid="123" data-testid="bookItem">
+          <h3 data-testid="bookItemTitle">Book Title 1</h3>
+          <p data-testid="bookItemAuthor">Author: Author 1</p>
+          <p data-testid="bookItemYear">Year: 2030</p>
+          <div>
+            <button data-testid="bookItemIsCompleteButton">Mark as Read</button>
+            <button data-testid="bookItemDeleteButton">Delete</button>
+            <button data-testid="bookItemEditButton">Edit</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Finished Reading Section -->
+    <section aria-labelledby="finishedReading">
+      <h2 id="finishedReading">Finished Reading</h2>
+      <div id="completeBookList" data-testid="completeBookList">
+        <article data-bookid="456" data-testid="bookItem">
+          <h3 data-testid="bookItemTitle">Book Title 2</h3>
+          <p data-testid="bookItemAuthor">Author: Author 2</p>
+          <p data-testid="bookItemYear">Year: 2025</p>
+          <div>
+            <button data-testid="bookItemIsCompleteButton">Mark as Unread</button>
+            <button data-testid="bookItemDeleteButton">Delete</button>
+            <button data-testid="bookItemEditButton">Edit</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 The Shelf Web. All rights reserved.</p>
+  </footer>
+</body>
+</html>
